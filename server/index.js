@@ -29,6 +29,7 @@ wss.on("connection", (ws) => {
 });
 
 app.get("/server-check", (req, res) => {
+  console.log("server-check CALLED");
   res.sendStatus(200);
 });
 
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
       res.json(result);
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
