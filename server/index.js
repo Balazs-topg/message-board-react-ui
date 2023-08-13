@@ -12,7 +12,6 @@ app.use(cors());
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {});
 
-const port = 3000;
 const server = http.createServer(app);
 
 const wss = new WebSocket.Server({ server }); // Create a WebSocket server instance
@@ -29,7 +28,12 @@ wss.on("connection", (ws) => {
   });
 });
 
+app.get("/server-check", (req, res) => {
+  res.sendStatus(200);
+});
+
 app.get("/", (req, res) => {
+  console.log("GET CALLED");
   messageModel
     .find({})
     .then((result) => {
@@ -55,6 +59,7 @@ app.post("/create", async (req, res) => {
   res.json(message);
 });
 
+const port = 3000;
 server.listen(port, () => {
   console.log(`SERVER IS RUNNING ON http://localhost:${port}/`);
 });
