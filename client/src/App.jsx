@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import moment from "moment";
 
-const socket = new WebSocket(`ws://message-board-backend.onrender.com`);
+const socket = new WebSocket(`wss://message-board-backend.onrender.com`);
 
 function ChatButtble({ userName, message, time, selectedUserName }) {
   let momentObj = moment(time);
