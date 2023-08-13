@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import moment from "moment";
-import io from "socket.io-client";
-const socket = new WebSocket("ws://localhost:3000");
+
+const socket = new WebSocket(`ws://message-board-backend.onrender.com`);
 
 function ChatButtble({ userName, message, time, selectedUserName }) {
   let momentObj = moment(time);
@@ -73,7 +73,7 @@ function App() {
 
   function fetchMessages() {
     axios
-      .get("http://localhost:3000/")
+      .get("https://message-board-backend.onrender.com")
       .then((response) => {
         setMessages(response.data);
       })
@@ -106,7 +106,7 @@ function App() {
 
     if (messageIsValid) {
       axios
-        .post("http://localhost:3000/create", {
+        .post(`http://message-board-backend.onrender.com/create`, {
           userName: userName,
           message: message,
           time: String(new Date()),
