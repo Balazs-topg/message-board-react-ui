@@ -59,7 +59,7 @@ app.post("/create", async (req, res) => {
   res.json(message);
 });
 
-const port = 3000;
+const port = process.env.PORT;
 server.listen(port, () => {
   console.log(`SERVER IS RUNNING ON http://localhost:${port}/`);
 });
