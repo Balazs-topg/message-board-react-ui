@@ -7,7 +7,10 @@ This project is inspired by the "message board" assignment in TheOdinProject, bu
 The frontend will be using the following libraries/frameworks:
 Vite + React (as my js framework)
 TailwindCSS (as my styling soulution)
+Daisyui (as my component library)
 Axios (for making api calls easier)
+moment (for formating dates)
+ws (for realtime updates)
 
 The backend will be running the following libraries/frameworks:
 NodeJs (as my js runtime)
@@ -15,3 +18,5 @@ Nodemon (so editing the server becomes easier)
 Express (to handle routing and middleware)
 Mongoose (for interacting with the mongoDB database)
 Cors
+dotenv
+ws (for realtime updates)
