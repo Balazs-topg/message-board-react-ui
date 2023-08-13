@@ -106,7 +106,7 @@ function App() {
 
     if (messageIsValid) {
       axios
-        .post(`http://message-board-backend.onrender.com/create`, {
+        .post(`https://message-board-backend.onrender.com/create`, {
           userName: userName,
           message: message,
           time: String(new Date()),
